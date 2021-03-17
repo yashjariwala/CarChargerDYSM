@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "13386268930",
+    "project_id": "car-charger-dysm",
+    "storage_bucket": "car-charger-dysm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13386268930:android:94ba6fe8e1460e1f20821b",
+        "android_client_info": {
+          "package_name": "com.dysm.carchargerdysm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "13386268930-b06sptf7l0f8t2chep21mljn6pvn6b3v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dysm.carchargerdysm",
+            "certificate_hash": "f828fae1478b5d99dfb104d7ee918b8d7173a91b"
+          }
+        },
+        {
+          "client_id": "13386268930-ej2ggman0o1869liv44rgmhbc4c47epd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAESiUfzgBdVi1nN-1HLudlncrAwdqsO54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "13386268930-ej2ggman0o1869liv44rgmhbc4c47epd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

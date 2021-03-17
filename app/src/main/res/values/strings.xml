@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Car Charger DYSM</string>
+    <string name="SIGCE_logo">SIGCE LOGO</string>
+    <string name="fisthomeloginorregbutton">Login / Register </string>
+    <string name="loginscreenloginbig">Login</string>
+    <string name="loginemail">Email Id</string>
+    <string name="loginpassword">Password</string>
+    <string name="loginbuttonloginscreen">Login</string>
+    <string name="notauserregisternow">Not a user?</string>
+    <string name="loginscreenregisternow">Register Now!</string>
+    <string name="registerpagecreatenewaccount">Create a new Account</string>
+    <string name="registerpagename">Name</string>
+    <string name="registerpagephoneno">Mobile Number</string>
+    <string name="registerpageupiid">UPI ID</string>
+
+</resources>
