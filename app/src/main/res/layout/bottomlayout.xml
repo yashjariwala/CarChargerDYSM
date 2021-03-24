@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/appthemeblue"
+
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:text="@string/enterupipindialog"
+        android:textAlignment="center"
+        android:textColor="#F6F6F6"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/enterupitext"
+        android:layout_width="324dp"
+        android:layout_height="48dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:maxLength="4"
+        android:hint="@string/upipindialog"
+        android:importantForAutofill="no"
+        android:inputType="numberPassword"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+
+        android:textColorHint="@color/white" />
+
+    <Space
+        android:layout_width="376dp"
+        android:layout_height="26dp" />
+
+    <Button
+        android:id="@+id/enterupibutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttons"
+        android:text="@string/paynow"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

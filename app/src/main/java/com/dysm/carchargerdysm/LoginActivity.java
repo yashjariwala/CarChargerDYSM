@@ -27,12 +27,20 @@ public class LoginActivity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         firebasAuth=FirebaseAuth.getInstance();
-        Button registerrnowbutton = findViewById(R.id.loginscreenregisterbutton);
-        registerrnowbutton.setOnClickListener(new View.OnClickListener() {
+        TextView registerrnowtext = findViewById(R.id.registernoetextloginpage);
+        registerrnowtext.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(),"Hello1" , Toast.LENGTH_LONG).show();
                 startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+            }
+        });
+        TextView forgotpassword = findViewById(R.id.forgotpassword);
+        forgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(),"Hello1" , Toast.LENGTH_LONG).show();
+                startActivity(new Intent(LoginActivity.this,ForgotPassword.class));
             }
         });
         loginemail=findViewById(R.id.loginemail);
@@ -59,8 +67,9 @@ public class LoginActivity extends MainActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
             if (task.isSuccessful()){
-                Toast.makeText(LoginActivity.this,"Yash is Great!  " +
-                        "Login Sucess",Toast.LENGTH_LONG).show();
+             //   Toast.makeText(LoginActivity.this,"Yash is Great!  " +
+               //         "Login Sucess",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(LoginActivity.this,PaymentGateway.class));
             }
             else{
                 Toast.makeText(LoginActivity.this, task.getException().getMessage(),Toast.LENGTH_LONG).show();

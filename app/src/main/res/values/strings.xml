@@ -1,16 +1,30 @@
 <resources>
     <string name="app_name">Car Charger DYSM</string>
+    <string name="welcomescreen">Welcome!</string>
+    <string name="app_description">Pole Mounted Electric Vehicle Charging System.</string>
+    <string name="forgotpasswor">Forgot Password?</string>
+    <string name="resetpassword">Reset Password</string>
     <string name="SIGCE_logo">SIGCE LOGO</string>
-    <string name="fisthomeloginorregbutton">Login / Register </string>
+    <string name="fisthomeregisterbutton">Register Now!</string>
     <string name="loginscreenloginbig">Login</string>
     <string name="loginemail">Email Id</string>
     <string name="loginpassword">Password</string>
     <string name="loginbuttonloginscreen">Login</string>
-    <string name="notauserregisternow">Not a user?</string>
+    <string name="notauserregisternow">You are not a member?</string>
     <string name="loginscreenregisternow">Register Now!</string>
     <string name="registerpagecreatenewaccount">Create a new Account</string>
     <string name="registerpagename">Name</string>
     <string name="registerpagephoneno">Mobile Number</string>
     <string name="registerpageupiid">UPI ID</string>
+    <string name="startupimage">startupiamges</string>
+    <string name="paymentgateway">Payment Gateway</string>
+    <string name="loadinupiid">Loading Registered UPI ID.......</string>
+    <string name="chargingamountdescription">A nominal Charge of Cost of ₹500/- will be charged now and the balance will be auto debited/credited fom the above UPI ID post charging is stopped.</string>
+    <string name="enterupipin">Enter UPI Pin</string>
+    <string name="enterupipindialog">Enter 4 Digit UPI Pin</string>
+    <string name="upipindialog">UPI PIN</string>
+    <string name="paynow">Pay Now</string>
+    <string name="transactionpage">Once nominal charge is deducted press the start charging button to start charging!</string>
+    <string name="carimage">Car Image</string>
 
 </resources>

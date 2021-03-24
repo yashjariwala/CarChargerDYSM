@@ -44,4 +44,6 @@ public class UserData {
     public void setUserupiid(String userupiid) {
         this.userupiid = userupiid;
     }
+
+    public void getuserupiid(String userupiid){this.userupiid= userupiid;}
 }
