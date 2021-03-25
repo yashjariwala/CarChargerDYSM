@@ -1,9 +1,6 @@
 package com.dysm.carchargerdysm;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +13,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class BottomSheetDialog extends BottomSheetDialogFragment {
@@ -34,7 +30,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
                 if (upipin.getText().toString().equals("0000")){
                     Toast.makeText(getContext(), "Transaction Sucessful", Toast.LENGTH_SHORT).show();
                     getDialog().dismiss();
-                    Intent intent = new Intent(getContext() , StartCharging.class);
+                    Intent intent = new Intent(getContext() , startcharging.class);
                     startActivity(intent);
                 }
                 else{

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dysm.carchargerdysm">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.dysm.carchargerdysm">
+
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-feature android:name="android.hardware.camera2"></uses-feature>
+
 
     <application
         android:allowBackup="true"
@@ -14,6 +17,9 @@
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".ForgotPassword"></activity>
         <activity android:name=".PaymentGateway"></activity>
+        <activity android:name=".qrScan"></activity>
+        <activity android:name=".startcharging"></activity>
+        <activity android:name=".captureAct" android:screenOrientation="fullSensor" android:stateNotNeeded="true" android:windowSoftInputMode="stateAlwaysHidden"></activity>
         <activity android:name=".WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

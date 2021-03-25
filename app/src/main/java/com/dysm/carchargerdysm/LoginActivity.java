@@ -69,7 +69,7 @@ public class LoginActivity extends MainActivity {
             if (task.isSuccessful()){
              //   Toast.makeText(LoginActivity.this,"Yash is Great!  " +
                //         "Login Sucess",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(LoginActivity.this,PaymentGateway.class));
+                startActivity(new Intent(LoginActivity.this,qrScan.class));
             }
             else{
                 Toast.makeText(LoginActivity.this, task.getException().getMessage(),Toast.LENGTH_LONG).show();

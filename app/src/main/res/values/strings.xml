@@ -26,5 +26,7 @@
     <string name="paynow">Pay Now</string>
     <string name="transactionpage">Once nominal charge is deducted press the start charging button to start charging!</string>
     <string name="carimage">Car Image</string>
-
+    <string name="scannow">Scan Now</string>
+    <string name="lampost">Lamp Post</string>
+    <string name="instscanqr">Scan QR code present on the charging post to continue.</string>
 </resources>
