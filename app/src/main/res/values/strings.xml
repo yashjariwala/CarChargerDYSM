@@ -29,4 +29,6 @@
     <string name="scannow">Scan Now</string>
     <string name="lampost">Lamp Post</string>
     <string name="instscanqr">Scan QR code present on the charging post to continue.</string>
+    <string name="startchargingbutton">Start Charging</string>
+    <string name="stopchargingbutton">Stop Charging</string>
 </resources>
