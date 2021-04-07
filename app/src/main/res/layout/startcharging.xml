@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,6 +19,7 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo" />
 
+
     <Button
         android:id="@+id/chargeron"
         android:layout_width="wrap_content"
@@ -33,4 +33,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.859" />
+
+
+    <ImageView
+        android:id="@+id/chargermat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chargermat"
+        android:contentDescription="@string/chargermatoff" />
+
+    <ImageView
+        android:id="@+id/caronstartcharging"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/caronstartcharging"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/carnew" />
+
+    <ImageView
+        android:id="@+id/startchargingcharger"
+        android:layout_width="124dp"
+        android:layout_height="284dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/chargeroffwire"
+        app:layout_constraintBottom_toTopOf="@+id/chargeron"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/chargeroff" />
+
+    <TextView
+        android:id="@+id/startcharging"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pluginchargernow"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/startchargingcharger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.195" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

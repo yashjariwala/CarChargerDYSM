@@ -19,17 +19,40 @@
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/enterupitext"
+        android:id="@+id/amount"
         android:layout_width="324dp"
         android:layout_height="48dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/ic_baseline_email_24"
         android:drawablePadding="12dp"
         android:ems="10"
+        android:hint="amount"
+        android:importantForAutofill="no"
+        android:inputType="number"
         android:maxLength="4"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textAlignment="center"
+
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white" />
+
+    <Space
+        android:layout_width="376dp"
+        android:layout_height="26dp" />
+
+    <EditText
+        android:id="@+id/enterupi"
+        android:layout_width="324dp"
+        android:layout_height="48dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
         android:hint="@string/upipindialog"
         android:importantForAutofill="no"
         android:inputType="numberPassword"
+        android:maxLength="4"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:textAlignment="center"
@@ -38,11 +61,11 @@
         android:textColorHint="@color/white" />
 
     <Space
-        android:layout_width="376dp"
+        android:layout_width="match_parent"
         android:layout_height="26dp" />
 
     <Button
-        android:id="@+id/enterupibutton"
+        android:id="@+id/completetransaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/buttons"

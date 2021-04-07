@@ -23,7 +23,7 @@ public class ForgotPassword extends MainActivity {
         firebaseAuth=FirebaseAuth.getInstance();
         setContentView(R.layout.forgotpassword);
         TextView emailidforgot = findViewById(forgetpasswordemailtext);
-        Button resetpasswordbutton = findViewById(R.id.enterupitext);
+        Button resetpasswordbutton = findViewById(R.id.amount);
         resetpasswordbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

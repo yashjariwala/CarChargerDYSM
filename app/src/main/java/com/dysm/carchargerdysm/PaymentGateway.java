@@ -34,7 +34,7 @@ public class PaymentGateway extends MainActivity{
     protected void onStart() {
         super.onStart();
         Animation animation;
-        animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_up);
+        animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slideinsmoothpaymentgateway);
         ImageView carimage = findViewById(R.id.carimage);
         carimage.startAnimation(animation);
     }
