@@ -119,7 +119,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/ic_baseline_money"
+        android:drawableStart="@drawable/ic_rupee_indian"
         android:drawablePadding="12dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"

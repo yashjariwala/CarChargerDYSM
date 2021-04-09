@@ -19,12 +19,12 @@
     <string name="startupimage">startupiamges</string>
     <string name="paymentgateway">Payment Gateway</string>
     <string name="loadinupiid">Loading Registered UPI ID.......</string>
-    <string name="chargingamountdescription">A nominal Charge of Cost of ₹500/- will be charged now and the balance will be auto debited/credited fom the above UPI ID post charging is stopped.</string>
-    <string name="enterupipin">Enter UPI Pin</string>
-    <string name="enterupipindialog">Enter 4 Digit UPI Pin</string>
+    <string name="chargingamountdescription">Cost of charging is ₹10 per unit.  <br>Prepaid Recharge only!</br>  </string>
+    <string name="enterupipin">Enter Amount &amp; Pin</string>
+    <string name="enterupipindialog">Enter Amount &amp; Pin</string>
     <string name="upipindialog">UPI PIN</string>
     <string name="paynow">Pay Now</string>
-    <string name="transactionpage">Once nominal charge is deducted press the start charging button to start charging!</string>
+    <string name="transactionpage">Once the amount is deducted from the account the car will only charge for the amount paid.</string>
     <string name="carimage">Car Image</string>
     <string name="scannow">Scan Now</string>
     <string name="lampost">Lamp Post</string>
@@ -35,4 +35,12 @@
     <string name="chargermatoff">chargermatoff</string>
     <string name="caronstartcharging">car</string>
     <string name="chargeroffwire">chargeroffwire</string>
+    <string name="amount">Recharge Amount</string>
+    <string name="Ampere">Total Amount</string>
+    <string name="chargermaton">chargermaton</string>
+    <string name="chargeronimg">chargeronimg</string>
+    <string name="chargeroff">chargeroff</string>
+    <string name="currentusageamount">Used</string>
+    <string name="totalreachrgeamount">Total</string>
+    <string name="plainamount">Amount</string>
 </resources>
