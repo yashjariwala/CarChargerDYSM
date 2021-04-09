@@ -102,7 +102,7 @@ public class stopcharging extends MainActivity{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String status = snapshot.getValue().toString();
                 if("false" == status){
-                startActivity(new Intent(getApplicationContext(),PaymentGateway.class));
+                startActivity(new Intent(getApplicationContext(),invoiceshow.class));
                 }
             }
 

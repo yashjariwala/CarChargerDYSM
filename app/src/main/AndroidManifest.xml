@@ -20,6 +20,7 @@
         <activity android:name=".qrScan"></activity>
         <activity android:name=".startcharging"></activity>
         <activity android:name=".stopcharging"></activity>
+        <activity android:name=".invoiceshow"></activity>
         <activity android:name=".captureAct" android:screenOrientation="fullSensor" android:stateNotNeeded="true" android:windowSoftInputMode="stateAlwaysHidden"></activity>
         <activity android:name=".WelcomeScreen">
             <intent-filter>

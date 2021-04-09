@@ -43,4 +43,14 @@
     <string name="currentusageamount">Used</string>
     <string name="totalreachrgeamount">Total</string>
     <string name="plainamount">Amount</string>
+    <string name="invoice">Invoice</string>
+    <string name="invoicepagecarcharging">Car Charging</string>
+    <string name="invoicepageservices">Services (Wifi)</string>
+    <string name="servicesamountinvoicepage">0.00</string>
+    <string name="Invoicepageinfo">A Charger of ₹10 per unit is charged.</string>
+    <string name="invoicetotal">TOTAL</string>
+    <string name="invoicedes">DESCRIPTION</string>
+    <string name="invoiceprice">PRICE</string>
+    <string name="rechargeagain">Continue Charging</string>
+    <string name="exitapp">Exit App</string>
 </resources>
