@@ -30,6 +30,11 @@ public class startcharging extends MainActivity{
     }
 
     @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startcharging);
@@ -43,6 +48,7 @@ public class startcharging extends MainActivity{
                     myref.setValue(true);
                     Intent intent = new Intent(startcharging.this,stopcharging.class);
                     startActivity(intent);
+                    finish();
             }
         });
     }

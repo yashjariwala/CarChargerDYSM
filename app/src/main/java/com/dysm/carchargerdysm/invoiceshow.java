@@ -20,7 +20,22 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class invoiceshow extends MainActivity{
+    private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
+    private long mBackPressed;
 
+    @Override
+    public void onBackPressed()
+    {
+        if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis())
+        {
+            startActivity(new Intent(invoiceshow.this,LoginActivity.class));
+            finish();
+            return;
+        }
+        else { Toast.makeText(getBaseContext(), "Tap back button in order to exit", Toast.LENGTH_SHORT).show(); }
+
+        mBackPressed = System.currentTimeMillis();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +47,6 @@ public class invoiceshow extends MainActivity{
                 startActivity(new Intent(getApplicationContext(),PaymentGateway.class));
             }
         });
-
-
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReferenceamount = firebaseDatabase.getReference().child("RechargeAmount");

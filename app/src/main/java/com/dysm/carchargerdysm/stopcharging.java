@@ -108,6 +108,7 @@ public class stopcharging extends MainActivity{
                 String status = snapshot.getValue().toString();
                 if("false" == status){
                 startActivity(new Intent(getApplicationContext(),invoiceshow.class));
+                finish();
                 }
             }
 
