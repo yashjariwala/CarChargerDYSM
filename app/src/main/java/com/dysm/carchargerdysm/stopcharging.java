@@ -33,7 +33,12 @@ public class stopcharging extends MainActivity{
         animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
         ImageView chargeron = findViewById(R.id.chargeron);
         chargeron.startAnimation(animation);
+    }
 
+    @Override
+    public void onBackPressed() {
+       // super.onBackPressed();
+        //Toast.makeText(getApplicationContext(),"Not allowed to go back",Toast.LENGTH_SHORT).show();
     }
 
     @Override

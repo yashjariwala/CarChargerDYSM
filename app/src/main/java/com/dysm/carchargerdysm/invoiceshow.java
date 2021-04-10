@@ -33,6 +33,8 @@ public class invoiceshow extends MainActivity{
             }
         });
 
+
+
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReferenceamount = firebaseDatabase.getReference().child("RechargeAmount");
         databaseReferenceamount.addValueEventListener(new ValueEventListener() {
@@ -57,8 +59,10 @@ public class invoiceshow extends MainActivity{
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String units = snapshot.getValue().toString();
+                Float floatunits = Float.parseFloat(units);
+                Float floatunitsonscreen = floatunits/1000;
                 TextView unitsconsumed = findViewById(R.id.invoiceunitconsumed);
-                unitsconsumed.setText("Units Consumed: "+units);
+                unitsconsumed.setText("Units Consumed: "+ floatunitsonscreen);
             }
 
             @Override
