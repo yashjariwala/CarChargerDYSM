@@ -41,5 +41,6 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
     // https://github.com/robinhood/ticker
     implementation 'com.robinhood.ticker:ticker:2.0.2'
-
+    //Notification
+    implementation "com.android.support:support-compat"
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/loginlayoutforkeyboard"
     android:background="@drawable/bglogin">
 
     <TextView
@@ -61,6 +62,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/loginemail"
         app:layout_constraintTop_toBottomOf="@+id/loginemail" />
+
 
     <Button
         android:id="@+id/loginbutton"
@@ -127,5 +129,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginbutton" />
+
+    <ImageView
+        android:id="@+id/showpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/showpassword"
+        app:layout_constraintBottom_toBottomOf="@+id/loginpassword"
+        app:layout_constraintEnd_toEndOf="@+id/loginpassword"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="@+id/loginpassword"
+        app:layout_constraintTop_toTopOf="@+id/loginpassword"
+        app:srcCompat="@drawable/ic_baseline_showhidepass" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

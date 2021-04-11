@@ -1,6 +1,12 @@
 package com.dysm.carchargerdysm;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -11,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +30,8 @@ import com.google.firebase.database.ValueEventListener;
 public class invoiceshow extends MainActivity{
     private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
     private long mBackPressed;
+
+
 
     @Override
     public void onBackPressed()
@@ -36,10 +46,36 @@ public class invoiceshow extends MainActivity{
 
         mBackPressed = System.currentTimeMillis();
     }
+
+    private void Notification(){
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
+            NotificationChannel notificationChannel = new NotificationChannel("charger","charger",NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(notificationChannel);
+        }
+
+        Intent intent = new Intent(this, invoiceshow.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"charger")
+                .setContentText("Yash Jariwala ")
+                .setSmallIcon(R.drawable.logo)
+                .setAutoCancel(true)
+                .setContentText("Charging Complete")
+                .setContentIntent(pendingIntent);
+
+        NotificationManagerCompat managercopat = NotificationManagerCompat.from(this);
+        managercopat.notify(007,builder.build());
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.invoice);
+        Notification();
         Button exitapp = findViewById(R.id.rechargeamount);
         exitapp.setOnClickListener(new View.OnClickListener() {
             @Override

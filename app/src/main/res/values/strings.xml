@@ -53,4 +53,8 @@
     <string name="invoiceprice">PRICE</string>
     <string name="rechargeagain">Continue Charging</string>
     <string name="exitapp">Exit App</string>
+    <string name="channel_name">This is a test</string>
+    <string name="channel_description">This is a test description</string>
+    <string name="showidepass">showhidepass</string>
+    <string name="showpassword">showpassword</string>
 </resources>
