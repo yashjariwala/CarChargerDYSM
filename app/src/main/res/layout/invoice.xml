@@ -29,7 +29,7 @@
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398"
+        app:layout_constraintVertical_bias="0.393"
         app:srcCompat="@drawable/bill" />
 
     <TextView
@@ -49,8 +49,8 @@
         android:id="@+id/invoicename"
         android:layout_width="85dp"
         android:layout_height="37dp"
-        android:text="@string/invoice"
         android:gravity="center"
+        android:text="@string/invoice"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/invoiceimage"
@@ -117,8 +117,8 @@
         android:id="@+id/invoiveamounttextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
         android:gravity="center_horizontal"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/amountservicestextview"
         app:layout_constraintEnd_toEndOf="@+id/amountservicestextview"
         app:layout_constraintHorizontal_bias="0.428"
@@ -136,7 +136,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/invoiceimage"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138"
+        app:layout_constraintVertical_bias="0.135"
         app:srcCompat="@drawable/carinvoice" />
 
     <TextView
@@ -203,6 +203,19 @@
         app:layout_constraintTop_toBottomOf="@+id/invoicename"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/invoicenumber"
+        android:layout_width="232dp"
+        android:layout_height="19dp"
+        android:gravity="center"
+        android:textColor="#616161"
+        app:layout_constraintBottom_toBottomOf="@+id/invoiceimage"
+        app:layout_constraintEnd_toEndOf="@+id/invoicecar"
+        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/invoicepageinfo"
+        app:layout_constraintVertical_bias="0.2" />
+
     <Button
         android:id="@+id/rechargeamount"
         android:layout_width="wrap_content"
@@ -216,4 +229,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/invoiceimage"
         app:layout_constraintVertical_bias="0.164" />
+
+    <TextView
+        android:id="@+id/invoicepagerefund"
+        android:layout_width="305dp"
+        android:layout_height="36dp"
+        android:text="@string/refund"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/invoiceimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/invoicepageinfo"
+        app:layout_constraintVertical_bias="0.78" />
 </androidx.constraintlayout.widget.ConstraintLayout>

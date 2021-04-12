@@ -16,21 +16,39 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.ContentView;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+
 
 public class invoiceshow extends MainActivity{
     private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
     private long mBackPressed;
+    String invoicenumber, userid,rechargeAmount,energymeterbill,energymeterwatthour;
+    private FirebaseAuth firebaseauth;
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Animation animation;
+        animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.invoicecarmoving);
+        ImageView carimageinvoice = findViewById(R.id.invoicecar);
+        carimageinvoice.startAnimation(animation);
+    }
 
 
     @Override
@@ -84,6 +102,7 @@ public class invoiceshow extends MainActivity{
             }
         });
 
+
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReferenceamount = firebaseDatabase.getReference().child("RechargeAmount");
         databaseReferenceamount.addValueEventListener(new ValueEventListener() {
@@ -119,17 +138,52 @@ public class invoiceshow extends MainActivity{
                 Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
             }
         });
+        DatabaseReference databasereinvoicenumber = firebaseDatabase.getReference().child("Invoice").child("RechargeNumber");
+        databasereinvoicenumber.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String invoicenumber = snapshot.getValue().toString();
+                TextView invoicenumbertext = findViewById(R.id.invoicenumber);
+                invoicenumbertext.setText("Invoice Number : #"+invoicenumber);
 
 
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
+            }
+        });
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference dbref = FirebaseDatabase.getInstance().getReference();
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                rechargeAmount= snapshot.child("RechargeAmount").getValue().toString();
+                energymeterbill = snapshot.child("EnergyMeter").child("Bill").getValue().toString();
+                energymeterwatthour = snapshot.child("EnergyMeter").child("WattHour").getValue().toString();
+                userid = user.getUid();
+                invoicenumber= snapshot.child("Invoice").child("RechargeNumber").getValue().toString();
+
+                invoivetodb(userid,energymeterwatthour,energymeterbill,rechargeAmount,invoicenumber);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
+    private void invoivetodb(String userid,String energymeterwatthour, String energymeterbill, String rechargeAmount,String invoicenumbercuurent) {
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Animation animation;
-        animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.invoicecarmoving);
-        ImageView carimageinvoice = findViewById(R.id.invoicecar);
-        carimageinvoice.startAnimation(animation);
+        DatabaseReference databaserefrnce = FirebaseDatabase.getInstance().getReference("Invoice").child(invoicenumbercuurent);
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("userid", userid);
+        hashMap.put("energymeterwatthour",energymeterwatthour);
+        hashMap.put("energymeterbill",energymeterbill);
+        hashMap.put("rechargeAmount", rechargeAmount);
+        databaserefrnce.setValue(hashMap);
+        }
     }
-}
+
+

@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -19,6 +20,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,20 +32,21 @@ import com.robinhood.ticker.TickerView;
 
 import java.text.DecimalFormat;
 
-public class stopcharging extends MainActivity{
+public class stopcharging extends MainActivity {
     private static DecimalFormat df = new DecimalFormat("0.00");
+
     @Override
     protected void onStart() {
         super.onStart();
         Animation animation;
-        animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
+        animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
         ImageView chargeron = findViewById(R.id.chargeron);
         chargeron.startAnimation(animation);
     }
 
     @Override
     public void onBackPressed() {
-       // super.onBackPressed();
+        // super.onBackPressed();
         //Toast.makeText(getApplicationContext(),"Not allowed to go back",Toast.LENGTH_SHORT).show();
     }
 
@@ -51,8 +55,8 @@ public class stopcharging extends MainActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stopcharging);
         FirebaseDatabase firebasedatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReferenceAmount =firebasedatabase.getReference().child("EnergyMeter").child("Bill");
-        DatabaseReference databaseReferencerecahrgeamount =firebasedatabase.getReference().child("RechargeAmount");
+        DatabaseReference databaseReferenceAmount = firebasedatabase.getReference().child("EnergyMeter").child("Bill");
+        DatabaseReference databaseReferencerecahrgeamount = firebasedatabase.getReference().child("RechargeAmount");
 
         final String[] usedamount = {"0"};
         final String[] rechargeamount = {"0"};
@@ -73,7 +77,7 @@ public class stopcharging extends MainActivity{
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
             }
         });
         databaseReferencerecahrgeamount.addValueEventListener(new ValueEventListener() {
@@ -89,7 +93,7 @@ public class stopcharging extends MainActivity{
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -106,16 +110,17 @@ public class stopcharging extends MainActivity{
 
     private void findchargerstatus() {
         FirebaseDatabase firebasedatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReferencestatus =firebasedatabase.getReference().child("CHARGER_STATUS");
+        DatabaseReference databaseReferencestatus = firebasedatabase.getReference().child("CHARGER_STATUS");
         databaseReferencestatus.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String status = snapshot.getValue().toString();
-                if("false" == status){
-                startActivity(new Intent(getApplicationContext(),invoiceshow.class));
-                finish();
+                if ("false" == status) {
+                    startActivity(new Intent(getApplicationContext(), invoiceshow.class));
+                    Rechargenumberupdate();
                 }
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -124,4 +129,26 @@ public class stopcharging extends MainActivity{
         });
 
     }
+
+    private void Rechargenumberupdate() {
+        FirebaseDatabase firebasedatabase = FirebaseDatabase.getInstance();
+        DatabaseReference dbref = firebasedatabase.getReference().child("Invoice").child("RechargeNumber");
+        dbref.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+                    String oldRechargenumber = String.valueOf(task.getResult().getValue());
+                    int oldvalue = Integer.parseInt(oldRechargenumber);
+                    int newvalue = oldvalue+1;
+                    String newvaluestring = String.valueOf(newvalue);
+                    dbref.setValue(newvaluestring);
+                }
+            }
+        });
+    }
 }
+
+

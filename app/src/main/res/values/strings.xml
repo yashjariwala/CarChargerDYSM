@@ -45,7 +45,7 @@
     <string name="plainamount">Amount</string>
     <string name="invoice">Invoice</string>
     <string name="invoicepagecarcharging">Car Charging</string>
-    <string name="invoicepageservices">Services (Wifi)</string>
+    <string name="invoicepageservices">Services (Parking)</string>
     <string name="servicesamountinvoicepage">0.00</string>
     <string name="Invoicepageinfo">A Charger of ₹10 per unit is charged.</string>
     <string name="invoicetotal">TOTAL</string>
@@ -58,4 +58,5 @@
     <string name="showidepass">showhidepass</string>
     <string name="showpassword">showpassword</string>
     <string name="Chargingdnd">Charging..Do Not Disconnect!</string>
+    <string name="refund">A Refund will be initiated in 7 days if charging stopped or incomplete.</string>
 </resources>
