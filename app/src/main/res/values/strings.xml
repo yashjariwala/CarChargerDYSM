@@ -19,7 +19,7 @@
     <string name="startupimage">startupiamges</string>
     <string name="paymentgateway">Payment Gateway</string>
     <string name="loadinupiid">Loading Registered UPI ID.......</string>
-    <string name="chargingamountdescription">Cost of charging is ₹10 per unit.  <br>Prepaid Recharge only!</br>  </string>
+    <string name="chargingamountdescription"><br>Cost of charging is ₹10 per unit.</br><br>Prepaid Recharge only!</br>  </string>
     <string name="enterupipin">Enter Amount &amp; Pin</string>
     <string name="enterupipindialog">Enter Amount &amp; Pin</string>
     <string name="upipindialog">UPI PIN</string>
@@ -57,4 +57,5 @@
     <string name="channel_description">This is a test description</string>
     <string name="showidepass">showhidepass</string>
     <string name="showpassword">showpassword</string>
+    <string name="Chargingdnd">Charging..Do Not Disconnect!</string>
 </resources>
