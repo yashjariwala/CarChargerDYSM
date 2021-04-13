@@ -30,6 +30,8 @@ public class PaymentGateway extends MainActivity{
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     private TextView retriveTV;
+    private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
+    private long mBackPressed;
 
     @Override
     protected void onStart() {
@@ -38,6 +40,25 @@ public class PaymentGateway extends MainActivity{
         animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slideinsmoothpaymentgateway);
         ImageView carimage = findViewById(R.id.carimage);
         carimage.startAnimation(animation);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+
+        if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis())
+        {
+            //startActivity(new Intent(invoiceshow.this,LoginActivity.class));
+            Intent  intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+            return;
+        }
+        else { Toast.makeText(getBaseContext(), "Tap back button in order to exit", Toast.LENGTH_SHORT).show(); }
+
+        mBackPressed = System.currentTimeMillis();
     }
 
     @Override

@@ -56,7 +56,11 @@ public class invoiceshow extends MainActivity{
     {
         if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis())
         {
-            startActivity(new Intent(invoiceshow.this,LoginActivity.class));
+            //startActivity(new Intent(invoiceshow.this,LoginActivity.class));
+            Intent  intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
             finish();
             return;
         }
@@ -99,6 +103,7 @@ public class invoiceshow extends MainActivity{
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),PaymentGateway.class));
+                finish();
             }
         });
 

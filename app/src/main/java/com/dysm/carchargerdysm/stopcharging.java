@@ -118,6 +118,7 @@ public class stopcharging extends MainActivity {
                 if ("false" == status) {
                     startActivity(new Intent(getApplicationContext(), invoiceshow.class));
                     Rechargenumberupdate();
+                    finish();
                 }
             }
 

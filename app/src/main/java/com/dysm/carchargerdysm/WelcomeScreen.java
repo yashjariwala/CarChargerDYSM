@@ -48,6 +48,7 @@ public class WelcomeScreen extends Activity {
                      @Override
                      public void run() {
                          startActivity(new Intent(WelcomeScreen.this,MainActivity.class));
+                         finish();
                      }
                  },1500);
             }
