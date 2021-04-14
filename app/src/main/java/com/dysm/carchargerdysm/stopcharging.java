@@ -33,7 +33,7 @@ import com.robinhood.ticker.TickerView;
 import java.text.DecimalFormat;
 
 public class stopcharging extends MainActivity {
-    private static DecimalFormat df = new DecimalFormat("0.00");
+    private static DecimalFormat df = new DecimalFormat("0.000");
 
     @Override
     protected void onStart() {

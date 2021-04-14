@@ -19,7 +19,7 @@
     <string name="startupimage">startupiamges</string>
     <string name="paymentgateway">Payment Gateway</string>
     <string name="loadinupiid">Loading Registered UPI ID.......</string>
-    <string name="chargingamountdescription"><br>Cost of charging is ₹10 per unit.</br><br>Prepaid Recharge only!</br>  </string>
+    <string name="chargingamountdescription">Cost of charging is ₹10 per unit.\n Prepaid Recharge only! </string>
     <string name="enterupipin">Enter Amount &amp; Pin</string>
     <string name="enterupipindialog">Enter Amount &amp; Pin</string>
     <string name="upipindialog">UPI PIN</string>
@@ -41,7 +41,7 @@
     <string name="chargeronimg">chargeronimg</string>
     <string name="chargeroff">chargeroff</string>
     <string name="currentusageamount">Used</string>
-    <string name="totalreachrgeamount">Total</string>
+    <string name="totalreachrgeamount">Total </string>
     <string name="plainamount">Amount</string>
     <string name="invoice">Invoice</string>
     <string name="invoicepagecarcharging">Car Charging</string>

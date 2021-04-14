@@ -34,8 +34,8 @@
 
     <TextView
         android:id="@+id/invoicetotalamount"
-        android:layout_width="62dp"
-        android:layout_height="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="right"
         android:textColor="#040404"
         app:layout_constraintBottom_toBottomOf="@+id/invoiceimage"
@@ -165,8 +165,8 @@
 
     <TextView
         android:id="@+id/totalinvoice"
-        android:layout_width="62dp"
-        android:layout_height="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/invoicetotal"
         android:textColor="#E91E63"

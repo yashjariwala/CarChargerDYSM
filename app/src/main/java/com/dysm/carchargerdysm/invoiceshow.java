@@ -31,6 +31,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 
 
@@ -39,6 +40,7 @@ public class invoiceshow extends MainActivity{
     private long mBackPressed;
     String invoicenumber, userid,rechargeAmount,energymeterbill,energymeterwatthour;
     private FirebaseAuth firebaseauth;
+    private static DecimalFormat df = new DecimalFormat("0.000");
 
 
     @Override
@@ -117,7 +119,7 @@ public class invoiceshow extends MainActivity{
                 TextView invoiceamount = findViewById(R.id.invoiveamounttextview);
                 invoiceamount.setText("₹"+amount);
                 TextView invoicetotalamount = findViewById(R.id.invoicetotalamount);
-                invoicetotalamount.setText("₹"+amount);
+                invoicetotalamount.setText(" ₹"+amount);
 
             }
 
@@ -134,8 +136,9 @@ public class invoiceshow extends MainActivity{
                 String units = snapshot.getValue().toString();
                 Float floatunits = Float.parseFloat(units);
                 Float floatunitsonscreen = floatunits/1000;
+
                 TextView unitsconsumed = findViewById(R.id.invoiceunitconsumed);
-                unitsconsumed.setText("Units Consumed: "+ floatunitsonscreen);
+                unitsconsumed.setText("Units Consumed: "+ df.format(floatunitsonscreen));
             }
 
             @Override

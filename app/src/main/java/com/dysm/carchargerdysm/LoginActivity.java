@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -37,6 +38,9 @@ public class LoginActivity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         firebasAuth=FirebaseAuth.getInstance();
+
+
+
 
         //Hide Keyboard
         findViewById(android.R.id.content).setOnTouchListener(new View.OnTouchListener() {
