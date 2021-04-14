@@ -25,6 +25,7 @@
         android:layout_marginTop="48dp"
         android:background="@drawable/buttons"
         android:text="@string/loginscreenregisternow"
+        android:padding="15sp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

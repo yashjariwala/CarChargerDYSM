@@ -69,6 +69,7 @@
         android:background="@drawable/buttons"
         android:text="@string/enterupipin"
         android:textColor="#FFFFFF"
+        android:padding="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

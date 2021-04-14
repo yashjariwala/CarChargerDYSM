@@ -59,4 +59,5 @@
     <string name="showpassword">showpassword</string>
     <string name="Chargingdnd">Charging..Do Not Disconnect!</string>
     <string name="refund">A Refund will be initiated in 7 days if charging stopped or incomplete.</string>
+    <string name="exit">Press Back Button To Exit.</string>
 </resources>

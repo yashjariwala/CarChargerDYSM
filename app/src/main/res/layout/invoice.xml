@@ -222,13 +222,14 @@
         android:layout_height="wrap_content"
         android:background="@drawable/buttons"
         android:text="@string/rechargeagain"
+        android:padding="15sp"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/invoiceimage"
-        app:layout_constraintVertical_bias="0.164" />
+        app:layout_constraintVertical_bias="0.111" />
 
     <TextView
         android:id="@+id/invoicepagerefund"
@@ -241,4 +242,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/invoicepageinfo"
         app:layout_constraintVertical_bias="0.78" />
+
+    <TextView
+        android:id="@+id/exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rechargeamount"
+        app:layout_constraintVertical_bias="0.082" />
 </androidx.constraintlayout.widget.ConstraintLayout>
