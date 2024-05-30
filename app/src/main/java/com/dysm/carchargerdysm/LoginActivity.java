@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -21,6 +22,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +39,23 @@ public class LoginActivity extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
+
+        // Log to check if Firebase initialization is called
+        Log.d("LoginActivity", "Initializing Firebase");
+
+        // Ensure Firebase is initialized
+        if (FirebaseApp.getApps(this).isEmpty()) {
+            FirebaseApp.initializeApp(this);
+            Log.d("LoginActivity", "Firebase initialized");
+        } else {
+            Log.d("LoginActivity", "Firebase already initialized");
+        }
+
+        // Initialize Firebase Auth
         firebasAuth=FirebaseAuth.getInstance();
+
+        Log.d("LoginActivity", "FirebaseAuth instance created");
 
 
 

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "13386268930",
+    "firebase_url": "https://car-charger-dysm-default-rtdb.firebaseio.com",
     "project_id": "car-charger-dysm",
     "storage_bucket": "car-charger-dysm.appspot.com"
   },

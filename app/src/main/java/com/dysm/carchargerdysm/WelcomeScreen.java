@@ -18,16 +18,28 @@ import static com.dysm.carchargerdysm.R.layout.activity_main;
 import static com.dysm.carchargerdysm.R.layout.bottomlayout;
 import static com.dysm.carchargerdysm.R.layout.welcomscreen;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.appcheck.FirebaseAppCheck;
+import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory;
+
 public class WelcomeScreen extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Debug Instance
+        FirebaseApp.initializeApp(this);
+        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+        firebaseAppCheck.installAppCheckProviderFactory(
+                DebugAppCheckProviderFactory.getInstance());
         setContentView(welcomscreen);
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
         Animation animation;
         ImageView lightsoncar = findViewById(R.id.welcomescreencarlights);
         ImageView mat = findViewById(R.id.welcomescreenchargermatoff);
